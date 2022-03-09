@@ -209,7 +209,7 @@ def draw_figure(importance_scores, save_location="./"):
     sorted_features = [x[0] for x in sorted_scores]
     normalized_values = [x[1] for x in sorted_scores]
 
-    fig, ax = plt.subplots(figsize=(25, 10))
+    fig, ax = plt.subplots(figsize=(35, 10))
     y_pos = np.arange(len(scaled_scores))
     ax.barh(y_pos, normalized_values, align='center')
     ax.set_yticks(y_pos)
