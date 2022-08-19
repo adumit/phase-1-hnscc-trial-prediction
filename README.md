@@ -5,8 +5,9 @@ The code in this repository produces the results of the random forest model in t
 
 To run the code perform the follow:
 1) Clone the repository
-2) Download the data (at the time of writing it is TBD how this will be done)
-3) Change directory to the repository
-4) Install the requirements `pip install -r requirements.txt`
-5) Run the script with `python3 generate_results.py`
-    5a) Optionally, you may edit arguments of where to write files or the number of trials to run by editing the variables at the top of the script.
+    1a) The data is already present in the repository and was compiled by hand from the raw data, which is available for download.
+    1b) DOI number to be added here once assigned for ease of locating the data.
+2) Change directory to the repository
+3) Install the requirements `pip install -r requirements.txt`
+4) Run the script with `python3 generate_results.py`
+    4a) Optionally, you may edit arguments of where to write files or the number of trials to run by editing the variables at the top of the script.

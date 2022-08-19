@@ -17,7 +17,7 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import accuracy_score
 
 
-TSV_LOCATION = "../Random-forest-data-v2.tsv"
+TSV_LOCATION = "./data/compiled-trial-data-for-prediction.tsv"
 NUM_TRIALS = 20
 SAVE_LOCATION = "./"
 
@@ -209,6 +209,8 @@ def draw_figure(importance_scores, save_location="./"):
     sorted_features = [x[0] for x in sorted_scores]
     normalized_values = [x[1] for x in sorted_scores]
 
+    print(f"Normalized importances: {sorted_scores}")
+
     fig, ax = plt.subplots(figsize=(35, 10))
     y_pos = np.arange(len(scaled_scores))
     ax.barh(y_pos, normalized_values, align='center')
@@ -229,9 +231,10 @@ if __name__ == "__main__":
     # Create the random grid
     param_grid = {
         'n_estimators': [int(x) for x in np.linspace(start = 5, stop = 200, num = 20)],
-        'max_features': ['sqrt', 'log2'],
+        'max_features': ['sqrt', 'log2', 'auto'],
         'max_depth': [int(x) for x in np.linspace(3, 10, num = 5)],
-        'min_samples_split': [2, 3, 5]
+        'min_samples_split': [2, 3, 5],
+        'min_samples_leaf': [1, 2, 3]
     }
     classifier_fn = RandomForestClassifier
 
